@@ -1,0 +1,233 @@
+.layer {
+    margin: 0 auto;
+    width: 1195px
+}
+header {
+    width: 1280px;
+    height: 164px;
+    position: relative
+}
+header .logo {
+    width: 42px;
+    height: 100px;
+    background: url(../image/souye/secoo_logo.png) no-repeat;
+    position: absolute;
+    left: 20px;
+    top: 0px
+}
+header .header_t {
+    width: 580px;
+    height: 30px;
+    position: absolute;
+    left: 675px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+header .header_t p {
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+header .header_t .first, header .header_t .selebox1 .second, .selebox1 header .header_t .second, header .header_t .selebox2 .second, .selebox2 header .header_t .second, header .header_t .selebox3 .second, .selebox3 header .header_t .second, header .header_t .selebox4 .second, .selebox4 header .header_t .second, header .header_t .selebox5 .second, .selebox5 header .header_t .second, header .header_t .selebox6 .second, .selebox6 header .header_t .second, header .header_t .selebox7 .second, .selebox7 header .header_t .second, header .header_t .selebox8 .second, .selebox8 header .header_t .second, header .header_t .selebox9 .second, .selebox9 header .header_t .second {
+    width: 222px;
+    height: 32px
+}
+header .header_t .second {
+    width: 220px;
+    height: 32px
+}
+header .header_t .third {
+    width: 85px;
+    height: 32px
+}
+header .header_t a {
+    font-size: 12px;
+    color: #999
+}
+header .header_t a:hover {
+    color: #f00
+}
+header .soushuo {
+    width: 486px;
+    height: 36px;
+    position: absolute;
+    left: 289px;
+    top: 53px;
+    border: 1px #663399 solid;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+header .soushuo #txt1 {
+    width: 85%;
+    height: 100%;
+    border: 1px #f00 solid;
+    line-height: 36px
+}
+header .soushuo #search {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #663399;
+    border: none
+}
+header .reshou {
+    width: 527px;
+    height: 21px;
+    position: absolute;
+    left: 291px;
+    top: 95px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+header .reshou li a {
+    font-size: 12px;
+    color: #999
+}
+header .reshou li a:hover {
+    color: red
+}
+header .header_b {
+    width: 635px;
+    height: 29px;
+    position: absolute;
+    left: 288px;
+    top: 131px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #000
+}
+header .header_r {
+    width: 110px;
+    height: 106px;
+    position: absolute;
+    left: 1132px;
+    top: 49px
+}
+header .header_r h1 {
+    font-size: 12px;
+    color: #000
+}
+
+
+/*下来菜单*/
+#sele {
+    width: 180px;
+    position: absolute;
+    left: 40px;
+    top: 130px;
+    background: #ff0;
+    z-index: 99
+}
+#sele li {
+    width: 180px;
+    height: 62px;
+    padding: 10px
+}
+#sele li h1 {
+    color: #fff;
+    font-size: 14px;
+    padding: 0 3px
+}
+#sele li a {
+    padding: 0 3px;
+    color: #999;
+    font-size: 12px
+}
+#sele li a:hover {
+    color: #f00;
+    text-decoration: underline
+}
+#sele .first, #sele .selebox1 .second, .selebox1 #sele .second, #sele .selebox2 .second, .selebox2 #sele .second, #sele .selebox3 .second, .selebox3 #sele .second, #sele .selebox4 .second, .selebox4 #sele .second, #sele .selebox5 .second, .selebox5 #sele .second, #sele .selebox6 .second, .selebox6 #sele .second, #sele .selebox7 .second, .selebox7 #sele .second, #sele .selebox8 .second, .selebox8 #sele .second, #sele .selebox9 .second, .selebox9 #sele .second {
+    width: 180px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px
+}
+.selebox1, .selebox2, .selebox3, .selebox4, .selebox5, .selebox6, .selebox7, .selebox8, .selebox9 {
+    background: #fff;
+    width: 380px;
+    position: absolute;
+    border: 1px #00f solid;
+    left: 180px;
+    padding: 20px;
+    display: none
+}
+.selebox1 .selebox1top, .selebox2 .selebox1top, .selebox3 .selebox1top, .selebox4 .selebox1top, .selebox5 .selebox1top, .selebox6 .selebox1top, .selebox7 .selebox1top, .selebox8 .selebox1top, .selebox9 .selebox1top {
+    padding: 10px 0;
+    border-bottom: 1px #000 dashed
+}
+.selebox1 .selebox1top h1, .selebox2 .selebox1top h1, .selebox3 .selebox1top h1, .selebox4 .selebox1top h1, .selebox5 .selebox1top h1, .selebox6 .selebox1top h1, .selebox7 .selebox1top h1, .selebox8 .selebox1top h1, .selebox9 .selebox1top h1 {
+    font-size: 14px;
+    color: #392f6b
+}
+.selebox1 .selebox1top .selebox1c, .selebox2 .selebox1top .selebox1c, .selebox3 .selebox1top .selebox1c, .selebox4 .selebox1top .selebox1c, .selebox5 .selebox1top .selebox1c, .selebox6 .selebox1top .selebox1c, .selebox7 .selebox1top .selebox1c, .selebox8 .selebox1top .selebox1c, .selebox9 .selebox1top .selebox1c {
+    padding: 10px 0;
+    overflow: hidden
+}
+.selebox1 .selebox1top .selebox1c span, .selebox2 .selebox1top .selebox1c span, .selebox3 .selebox1top .selebox1c span, .selebox4 .selebox1top .selebox1c span, .selebox5 .selebox1top .selebox1c span, .selebox6 .selebox1top .selebox1c span, .selebox7 .selebox1top .selebox1c span, .selebox8 .selebox1top .selebox1c span, .selebox9 .selebox1top .selebox1c span {
+    padding: 0px 12px;
+    background: url("../../../image/souye/images/bk_03.jpg") no-repeat right center;
+    margin-bottom: 3px;
+    display: block;
+    float: left
+}
+.selebox1 .selebox1top .selebox1c span a, .selebox2 .selebox1top .selebox1c span a, .selebox3 .selebox1top .selebox1c span a, .selebox4 .selebox1top .selebox1c span a, .selebox5 .selebox1top .selebox1c span a, .selebox6 .selebox1top .selebox1c span a, .selebox7 .selebox1top .selebox1c span a, .selebox8 .selebox1top .selebox1c span a, .selebox9 .selebox1top .selebox1c span a {
+    color: #000;
+    font-size: 12px;
+    text-align: center
+}
+.selebox1 .selebox1top .selebox1c span a:hover, .selebox2 .selebox1top .selebox1c span a:hover, .selebox3 .selebox1top .selebox1c span a:hover, .selebox4 .selebox1top .selebox1c span a:hover, .selebox5 .selebox1top .selebox1c span a:hover, .selebox6 .selebox1top .selebox1c span a:hover, .selebox7 .selebox1top .selebox1c span a:hover, .selebox8 .selebox1top .selebox1c span a:hover, .selebox9 .selebox1top .selebox1c span a:hover {
+    color: #f00
+}
+.selebox1 .selebox1footer, .selebox2 .selebox1footer, .selebox3 .selebox1footer, .selebox4 .selebox1footer, .selebox5 .selebox1footer, .selebox6 .selebox1footer, .selebox7 .selebox1footer, .selebox8 .selebox1footer, .selebox9 .selebox1footer {
+    width: 380px;
+    height: 77px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.selebox1 .first, .selebox2 .first, .selebox3 .first, .selebox4 .first, .selebox5 .first, .selebox6 .first, .selebox7 .first, .selebox8 .first, .selebox9 .first, .selebox1 .second, .selebox2 .second, .selebox3 .second, .selebox4 .second, .selebox5 .second, .selebox6 .second, .selebox7 .second, .selebox8 .second, .selebox9 .second {
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    background: #392f6b;
+    line-height: 30px;
+    margin-right: 30px
+}
+.selebox1 .first a, .selebox2 .first a, .selebox3 .first a, .selebox4 .first a, .selebox5 .first a, .selebox6 .first a, .selebox7 .first a, .selebox8 .first a, .selebox9 .first a, .selebox1 .second a, .selebox2 .second a, .selebox3 .second a, .selebox4 .second a, .selebox5 .second a, .selebox6 .second a, .selebox7 .second a, .selebox8 .second a, .selebox9 .second a {
+    color: #fff;
+    font-size: 14px
+}
+.selebox2 {
+    display: none
+}
+.selebox3 {
+    display: none
+}
+.selebox4 {
+    display: none
+}
+.selebox5 {
+    display: none
+}
+.selebox6 {
+    display: none
+}
+.selebox7 {
+    display: none
+}
+.selebox8 {
+    display: none
+}
+.selebox9 {
+    display: none
+}

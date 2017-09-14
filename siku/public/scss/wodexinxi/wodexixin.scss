@@ -1,0 +1,136 @@
+*{
+	margin:0;padding:0;
+	box-sizing:border-box;
+}
+ul li{ list-style: none }
+a{ text-decoration: none }
+a:hover{ color:#f00; }
+@mixin fontpb( $color:#999) {
+	font-size: 12px;
+	color:$color;
+}
+@mixin flexC($row:center){
+	display:flex;
+	justify-content: $row;
+	align-items:center;
+}
+@mixin column( $items:center , $content:flex-start  ){
+	display:flex;
+	flex-direction:column;
+	align-items:$items;
+	justify-content: $content;
+}
+@mixin position( $width,$height,$left,$top ){
+	width : $width;
+	height: $height;
+	position: absolute;
+	left:$left;
+	top:$top;
+}
+.layer{
+	margin: 0 auto;
+	width:1195px;
+}
+.main{
+	min-height: 973px;
+	background: rgb(237,237,237);
+	padding-top: 40px;
+	.mainleft{
+		width: 234px;
+		height:901px;
+		float: left;
+		.boxleft{
+			width:189px;
+			height:837px;
+			background: url("../../../image/wdexingxi/mainleft1.jpg") no-repeat;
+		}
+	}
+	.mainright{
+		width:900px;
+		height:901px;
+		background: #fff;
+		float: left;
+		padding: 30px;
+		.rightbox{
+			width:820px;
+			height:600px;
+			border: 1px #eee solid;
+			.mainrighttop{
+				width:100%;
+				height:32px;
+				ul{
+					width:100%;
+					height:32px;
+					@include flexC( space-between );
+					li{
+						flex:1;
+						height:32px;
+						@include flexC( );
+						background: #000;
+						color:#fff;
+						@include fontpb( #fff );
+						//border-left:1px #fff solid;
+						border-right:1px #fff solid;
+						cursor: pointer;
+					}
+					.active{
+						background: rgb(127,105,178);
+						color:#fff;
+						cursor: pointer;
+
+					}
+				}
+			}
+			.mainrightcenter{
+				width:100%;
+				height:400px;
+				position: relative;
+				
+				.box1{
+				width:100%;
+				height:400px;
+				padding:40px;
+				position: absolute;
+					li{
+						width: 100%;
+						height: 50px;
+						@include flexC( flex-start );
+						p{
+							width:150px;
+							height:100%;
+							font-size: 16px;
+							@include flexC( flex-start );
+						}
+						span{
+							height:100%;
+							width: 300px;
+							@include flexC( flex-start );
+							font-size: 16px;
+							padding: 0;
+						}
+					}
+			    }
+			  .box2{
+				width:100%;
+				height:400px;
+				padding:40px;
+				position: absolute;
+				@include flexC( );
+				text-align: center;
+				display: none;
+				font-size: 32px;
+
+			 	}
+			 	.box3{
+			 		@extend .box2;
+			 	}
+			 	.box4{
+			 		@extend .box2;
+			 	}
+			 	.box5{
+			 		@extend .box2;
+			 	}
+			}
+		}
+	}
+}

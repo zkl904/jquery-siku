@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+ul li {
+    list-style: none
+}
+a {
+    text-decoration: none
+}
+a:hover {
+    color: #f00
+}
+.layer {
+    margin: 0 auto;
+    width: 1195px
+}
+.main {
+    width: 1222px;
+    height: 574px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+.main .mainheader {
+    width: 541px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+.main .mainheader .headert {
+    color: #f00;
+    font-size: 28px
+}
+.main .mainheader .headerb {
+    color: #000;
+    font-size: 18px
+}
+.main .maincenter {
+    width: 1130px;
+    height: 260px
+}
+.main .maincenter .mainleft {
+    width: 50%;
+    height: 260px;
+    border-right: 1px #000 dashed;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around
+}
+.main .maincenter .mainleft p {
+    height: 28px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 28px
+}
+.main .maincenter .mainleft p span {
+    font-size: 16px;
+    margin-right: 25px
+}
+.main .maincenter .mainleft .p2 select {
+    margin-right: 20px;
+    width: 90px
+}
+.main .maincenter .mainleft .p2 span {
+    margin-right: 40px
+}
+.main .maincenter .mainleft .p3 select {
+    margin-right: 40px;
+    width: 90px
+}
+.main .maincenter .mainright {
+    width: 48%;
+    height: 260px;
+    float: left
+}
+.main .maincenter .mainright ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+    flex-wrap: wrap
+}
+.main .maincenter .mainright ul li {
+    width: 80px;
+    height: 30px;
+    background: #999;
+    color: #000;
+    cursor: pointer;
+    margin-right: 15px;
+    text-align: center;
+    line-height: 30px
+}
+.footer {
+    width: 200px;
+    height: 100px;
+    margin: 0 auto
+}
+.footer input {
+    width: 150px;
+    height: 60px;
+    background: #999;
+    color: #fff
+}
+
+/*# sourceMappingURL=zucechenggong.css.map */

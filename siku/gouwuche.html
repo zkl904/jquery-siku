@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+	</style>
+	<link rel="stylesheet" type="text/css" href="public/scss/gouwuche/gouwuche.css">
+	<link rel="stylesheet" type="text/css" href="public/zucecss.css">
+</head>
+<body>
+	<div id="headerbox">
+		<header class="layer">
+			<div class="left"></div>
+			<div class="right"></div>
+		</header>
+
+
+	</div>
+	<div class="main layer">
+	<div class="mainbox">
+		<div class="maintop">
+			现在<a href="denglu.html" id="dlmz">登录</a>您购物车中的商品将永久保存
+		</div>'
+		'
+		<div class="maincenter">
+			<div class="centerfirst">
+				<!-- <input type="checkbox" name="" id="">
+				<span>全选</span>
+				<span>商品名称</span>
+				<span>发货站</span>
+				<span>价格</span>
+				<span>数量</span>
+				<span>金额小计</span>
+				<span>操作</span> -->
+				<ul>
+					<li>
+						<input type="checkbox" name="" id="qxan">
+				        全选
+					</li>
+					<li>商品名称</li>
+					<li>发货站</li>
+					<li>价格</li>
+					<li>数量</li>
+					<li>金额小计</li>
+					<li>操作</li>
+				</ul>
+			</div>
+			<div class="centersecond">
+				<!-- <ul>
+					<li>
+						<input type="checkbox" name="" id="">
+					</li>
+					<li>
+						<img src="image/xiangqingye/chima.jpg" alt="">
+						<div class="xinxi">
+							<div class="xinxitop">SELF PORTRAIT V领印花镂空荷叶边收腰蕾丝侧开叉floral print devoré midi dress</div>
+							<div class="xinxibottom">
+								颜色:<span>紫红色</span>
+								尺码: <span>尺码4</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						美国
+					</li>
+					<li>
+						￥2,915
+					</li>
+					<li>
+						<div class="anniu">
+						
+							<p class="left">-</p>
+							<p class="center">1</p>
+							<p class="right">+</p>
+						</div>
+					</li>
+					<li>
+						￥2,915 元
+					</li>
+					<li class="removeli">
+						删除
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<input type="checkbox" name="" id="">
+					</li>
+					<li>
+						<img src="image/xiangqingye/chima.jpg" alt="">
+						<div class="xinxi">
+							<div class="xinxitop">SELF PORTRAIT V领印花镂空荷叶边收腰蕾丝侧开叉floral print devoré midi dress</div>
+							<div class="xinxibottom">
+								颜色:<span>紫红色</span>
+								尺码: <span>尺码4</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						美国
+					</li>
+					<li>
+						￥2,915
+					</li>
+					<li>
+						<div class="anniu">
+						
+							<p class="left">-</p>
+							<p class="center">1</p>
+							<p class="right">+</p>
+						</div>
+					</li>
+					<li>
+						￥2,915 元
+					</li>
+					<li class="removeli">
+						删除
+					</li>
+				</ul> -->
+			</div>
+			<div class="centerthird">
+				<div class="centerthirdt">
+				<li>
+					<!-- <input type="checkbox" name="" id="qx">
+					全选 -->
+				</li>
+				<li>
+					<!-- <span></span>
+					<p>删除选中商品</p> -->
+				</li>
+				<li>
+					<p>商品数量总计<span>0</span>件</p>
+					<p>包装数量总计<span>0</span>件</p>
+					<p>返利库币<span>0</span>库币</p>
+				</li>
+				</div>
+				<div class="centerthirdb">
+					<li>
+						<p style="cursor: pointer;">继续购物</p>
+					</li>
+					<li>
+						<div class="zonge">
+							商品金额总计(不含税金和运费):
+							<span>0</span>
+						</div>
+						<p style="cursor: pointer;">立即结算</p>
+					</li>
+				</div>
+			</div>
+		</div>
+		<div class="main bottom"></div>
+		<!-- 模板示例 
+		<ul>
+					<li>
+						<input type="checkbox" name="" id="">
+					</li>
+					<li>
+						<img src="image/xiangqingye/chima.jpg" alt="">
+						<div class="xinxi">
+							<div class="xinxitop">SELF PORTRAIT V领印花镂空荷叶边收腰蕾丝侧开叉floral print devoré midi dress</div>
+							<div class="xinxibottom">
+								颜色:<span>紫红色</span>
+								尺码: <span>尺码4</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						美国
+					</li>
+					<li>
+						￥2,915
+					</li>
+					<li>
+						<div class="anniu">
+						
+							<p class="left">-</p>
+							<p class="center">1</p>
+							<p class="right">+</p>
+						</div>
+					</li>
+					<li>
+						￥2,915 元
+					</li>
+					<li class="removeli">
+						删除
+					</li>
+				</ul>-->
+	</div>
+	</div>
+	<div id="footerbox"></div>
+</body>
+</html>
+<script src ="cookie.js"></script>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+     $("#footerbox").load( "public/zucepb.html .footer" );
+     window.onload=function(){
+     	var cookiedl = getCookie( "dluserimformation" );
+     	if(  cookiedl.length!=0 ){
+     		$("#dlmz").html(  cookiedl.name ).attr( "href" ," " );
+     	}
+     	else{
+     		$("#dlmz").html( "请登录" ).attr( "href" ,"denglu.html");
+     	}
+     }
+     var cookieInfo = getCookie( "shoplist" );
+     if( cookieInfo.length ==0 ){
+     	$(".centersecond").css( {"display" : "none" });
+     	$(".centerthirdt li").eq(2).find( "span" ).html( 0 );
+     	$(".centerthirdb .zonge").find( "span" ).html(0);
+     }
+     else{
+     	$(".centersecond").css( {"display" : "block"} );
+     }
+     // 购物车
+     console.log( cookieInfo );
+     if( cookieInfo!=0 ){
+     	var arr = cookieInfo;
+     	var html="";
+     	for(  var i in arr ){
+     	var ch = arr[i];
+     	
+   		 html+=`
+		<ul>
+		    <li>
+		        <input type="checkbox" name="" class="xz">
+		    </li>
+		    <li>
+		        <img src="${ch.src}" alt="">
+		        <div class="xinxi">
+		            <div class="xinxitop">${ch.tradename}</div>
+		            <div class="xinxibottom">
+		                颜色:<span>${ch.color}</span> 尺码: <span>${ch.size}</span>
+		            </div>
+		        </div>
+		    </li>
+		    <li>
+		        ${ch.address}
+		    </li >
+		    <li class="price">
+		        ￥<span>${ch.price}</span>
+		    </li>
+		    <li>
+		        <div class="anniu">
+		            <p class="left">-</p>
+		            <p class="center">${ch.count}</p>
+		            <p class="right">+</p>
+		        </div>
+		    </li>
+		    <li class="heji">
+		        ￥<span> ${ch.price*ch.count}</span>元
+		    </li>
+		    <li class="removeli">
+		        删除
+		    </li>
+		</ul>
+     	`
+     	console.log( typeof ch.count );
+     }
+     $(".centersecond").html( html  );
+     //s删除功能  判断依据 尺码``
+     $(".removeli").click(  function(){
+     	var tradename = $(this).parent().find( ".xinxitop" ).html();
+     	var size = $(this).parent().find( ".xinxibottom" ).children("span").eq(1).html();
+     	//console.log(  tradename , size );
+     	for(  var i in arr ){
+     		if(  tradename == arr[i].tradename  && size == arr[i].size  ){
+     			arr.splice(  i,1 );
+     			break;
+     		}
+        }
+        setCookie(  "shoplist" , JSON.stringify( arr ) );
+        $(this).parent().remove();
+     } )
+     // 按钮功能
+     $(".anniu .left").click( function(){
+     	var tradename = $(this).parent().parent().parent().find( ".xinxitop" ).html();
+     	var size = $(this).parent().parent().parent().find( ".xinxibottom" ).children("span").eq(1).html();
+     	var num= $(this).parent().find(".center" ).html( );
+     	num--;
+     	if(  num <=0 ){
+     		num = 0 ; 
+     	}
+     	for( var i in arr ){
+     		if( tradename == arr[i].tradename  && size == arr[i].size   ){
+     			arr[i].count = num;
+     			$(this).parent().parent().parent().children("li").eq( 5 ).html( `￥<span> ${ arr[i].price*num }</span>元 ` );
+     			break;
+     		}
+     	}
+     	setCookie( "shoplist" , JSON.stringify(arr ) );
+     	$(this).parent().find(".center" ).html(  num );
+     	//按钮时也计算
+     	if( $(this).parent().parent().parent().find(".xz").prop( "checked" )==true  ){
+     		jisuan();
+     	}
+     } )
+
+        $(".anniu .right").click( function(){
+     	var tradename = $(this).parent().parent().parent().find( ".xinxitop" ).html();
+     	var size = $(this).parent().parent().parent().find( ".xinxibottom" ).children("span").eq(1).html();
+     	var num= $(this).parent().find(".center" ).html( );
+     	num++;
+     	for( var i in arr ){
+     		if( tradename == arr[i].tradename  && size == arr[i].size   ){
+     			arr[i].count = num;
+     			$(this).parent().parent().parent().children("li").eq( 5 ).html(   `￥<span> ${ arr[i].price*num }</span>元 ` );
+     			break;
+     		}
+     	}
+     	setCookie( "shoplist" , JSON.stringify(arr ) );
+     	$(this).parent().find(".center" ).html(  num );
+     	if( $(this).parent().parent().parent().find(".xz").prop( "checked" )==true  ){
+     	jisuan();
+     	}
+     } )
+
+     // 全选
+
+     $("#qxan").click( function(){
+     	$(".xz").prop( "checked" ,$(this).prop( "checked" ) );
+     	jisuan();
+     } )
+     $(".xz").click( function(){
+     	jisuan();
+     } )
+
+     function jisuan(){
+     	//$(".xz:checked").
+     	var number = 0;
+     	var heji = 0 ; 
+     	var baozhuang = 0;
+     	for( var i = 0 ;i< $(".xz").length ;i++ ){
+     		if( $(".xz").eq(i).prop( "checked" ) == true ){
+     			var index = i;
+     			baozhuang++;
+     			number += parseInt($(".xz").eq(i).parent().parent().find(".anniu .center").html());
+     			heji +=parseInt($(".xz").eq(i).parent().parent().find( ".heji span" ).html() );
+     		}
+     	}
+     	$(".centerthirdt li").eq(2).children( "p" ).eq(0).children("span").html( number );
+     	$(".centerthirdt li").eq(2).children( "p" ).eq(1).children("span").html( baozhuang );
+     	$(".zonge span" ).html(  heji );
+     }
+    
+}
+	//链接
+	$( ".centerthirdb>li" ).eq(0).children("P").click( function(){
+		var f= confirm( "确定离开吗" )
+			if( f ){
+				location.href="souye.html";
+			}		
+	} );
+
+</script>

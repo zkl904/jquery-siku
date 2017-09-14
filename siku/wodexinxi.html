@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		
+	</style>
+	<link rel="stylesheet" type="text/css" href="public/souyepb.css">
+	<link rel="stylesheet" type="text/css" href="public/zucecss.css">
+	<link rel="stylesheet" type="text/css" href="public/scss/wodexinxi/wodexixin.css">
+
+</head>
+<body>
+	<div id="headerbox"></div>
+	<div class="main layer">
+		<div class="mainleft">
+			<div class="boxleft"></div>
+		</div>
+		<div class="mainright">
+		    <div class="rightbox">
+				<div class="mainrighttop">
+					<ul>
+						<li class="active">基本信息</li>
+						<li>我的级别</li>
+						<li>海外支付汇款信息</li>
+						<li>快捷支付</li>
+						<li>海外直邮相关信息</li>
+					</ul>
+				</div >
+				<div class="mainrightcenter">
+				<div class="box1">
+				<!-- 	<li>
+						<p>用户名:</p>
+						<span></span>
+					</li>
+					<li>
+						<p>性别:</p>
+						<span></span>
+					</li>
+					<li>
+						<p>生日:</p>
+						<span></span>
+					</li>
+					<li>
+						<p>家庭住址:</p>
+						<span></span>
+					</li>
+					<li>
+						<p>手机号或邮箱号:</p>
+						<span></span>
+					</li> -->
+					</div>
+					<div class="box2">不好意思,您现在没有级别,快快开始购物之路</div>
+					<div class="box3">暂无海外支付信息</div>
+					<div class="box4">还未绑定银行卡</div>
+					<div class="box5">暂无相关信息</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footerbox"></div>
+</body>
+</html>
+<script src ="cookie.js"></script>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+	$("#headerbox").load( "public/souyepb.html header",function(){
+		var cookieInfo = getCookie("dluserimformation");
+		console.log($("#delumz").html());
+
+		if (cookieInfo.length != 0) {
+			$("#delumz").html(cookieInfo.name);
+		} else {
+			$("#delumz").html("请登录");
+		}
+
+	} );
+	$("#footerbox").load( "public/zucepb.html .footer" );
+	var cookieInfo =getCookie( "dluserimformation" );
+	if( cookieInfo.length!=0 ){
+	//$(".mainrightcenter").li
+	var html="";
+	html+=`
+		<li>
+	    <p>用户名:</p>
+	    <span>${cookieInfo.name}</span>
+	</li>
+	<li>
+	    <p>性别:</p>
+	    <span>${cookieInfo.sex}</span>
+	</li>
+	<li>
+	    <p>生日:</p>
+	    <span>${cookieInfo.birthday}</span>
+	</li>
+	<li>
+	    <p>家庭住址:</p>
+	    <span>${cookieInfo.location}</span>
+	</li>
+	<li>
+	    <p>手机号或邮箱号:</p>
+	    <span>${cookieInfo.name}</span>
+	</li>
+		`
+		$(".box1").append( html );
+}
+   else{
+   	$(".box1").html( "您还没有登录,请先登录" );
+   }
+		//选项卡效果
+		$(".mainrighttop li").click( function(){
+			var index =$(this).index();
+			//$(".mainrightcenter").children( "div[class*=box]" ).each( function(index){
+				$(".mainrightcenter").children( "div[class*=box]" ).eq( index ).css( {"display" : "block"} ).siblings(  ).css( {"display" : "none"} );
+				$(this).addClass("active").siblings( ).removeClass( "active" );
+			//} )
+		} )
+		//for(  var i = 0 ;i<  )
+
+
+	</script>

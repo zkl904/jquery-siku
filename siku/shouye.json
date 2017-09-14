@@ -1,0 +1,28 @@
+{
+	"banner01":{
+		"name" :"banner",
+		"list" :[
+		{
+			"id" : "banner01",
+			"src" : "banner1.jpg",
+			"width" :"1030",
+			"height" : "400",
+			"srcw" : "banner1w.png"
+		},
+		{
+			"id" : "banner02",
+			"src" : "banner2.jpg",
+			"width" :"1030",
+			"height" : "400",
+			"srcw" : "banner2w.png"
+		},
+		{
+			"id" : "banner03",
+			"src" : "banner3.jpg",
+			"width" :"1030",
+			"height" : "400",
+			"srcw" :""
+		}
+		]
+	}
+}

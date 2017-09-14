@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	*{  margin: 0 ; padding:0 ; box-sizing: border-box  }   
+	.layerout{  margin:0 auto ;  }
+	a{ text-decoration:none ; color :#999;   }
+	a:hover{  color : red; }
+	ul li{  list-style: none; }	
+
+	.main{ width : 1222px; height: 784px; background: url(image/zuce/login_03.jpg) no-repeat; position: relative; }
+	/*注册表单部分*/
+	.boxregister{  width:380px; height:485px; background: #fff; position: relative; top : 110px; left: 800px; display: flex ;justify-content: center ; align-items: center;   }
+
+	.container{ width: 312px; height: 445px; font-size: 12px;    }
+	.boxregister .top{  margin:0 auto ; height: 50px; line-height: 50px; color: #ff9900; font-size: 30px;  text-align: center;}
+	.container p{ width: 312px; height: 40px; line-height: 40px;   }
+	#uname,#upwd,#qrma{  width: 312px; height: 44px; border: 1px #eee solid ;  }
+	.p4,.p5{  display: flex ;align-items: center; justify-content: flex-start;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="public/zucecss.css">
+</head>
+<body>
+	<div id="topheader"></div>
+
+	<!-- 页面部分 -->
+	<div class  = "main layerout">
+	<!-- 注册页面部分 -->
+		<div class="boxregister">
+		
+			<div class ="container">
+			<div class="top">欢迎登录</div>
+			<p> <span id="s1" style ="float:right; color:#999"> </span></p>
+			<input type="text" name="" id="uname" placeholder="用户名">
+			<p><span id="s2" style='float:right;display:none;'></span></p>
+			<input type="password" name="" id="upwd" placeholder="密码">
+			
+			<p class="p4"><input type="checkbox" name="" id="rember" >记住账号</p>
+			<input type="button" value="立即登录"  id="btn" style = "color:#fff;background:#ff9900;width:312px;height:50px;border:none;">
+			<p class="p5">合作网站账号登录
+			</p>
+			<p> 还不是寺库会员？ <a href="zucedenglu.html" style="color:#ff9900"> 免费注册 </a></p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 公用尾部 -->
+	<div id="footercontainer"></div>
+</body>
+</html>
+<script src = "cookie.js"></script>
+<script src=jquery-1.11.1.min.js></script>
+<script type="text/javascript">
+	$("#topheader").load(   "public/zucepb.html #header" );
+	$("#footercontainer").load(  "public/zucepb.html .footer" );
+	var cookieuser= getCookie( "userimformation");
+	var cookieInfo = getCookie( "imformation" );
+	var arr =[];
+	var newuserArr=[];
+	arr=cookieInfo;
+	newuserArr=cookieuser;
+	//console.log(  newuserArr  );
+	var flagName = null;
+	// 用户名验证
+	$("#uname").blur( function(){
+		if( $(this).val()=="" ){
+			$("#s1").html(  "用户名不能为空" ).css( {"color" : "#f00"} );
+			return;
+		}
+		for(  var i=0 ; i< arr.length ;i++   ){
+			if( $(this).val() == arr[i].name ){
+				flagName = true;
+				$("#s1").html(  "正确" ).css( {"color" : "#eee"} );
+				break;
+			}
+			else{
+				flagName = false;
+			}
+		}
+		if( !flagName ){
+			$("#s1").html(  "没有这个用户名，请先注册" ).css( {"color" : "#f00"} );
+		}
+	} )
+	// 得到焦点的时候提示消失
+	$("#uname").focus( function(){
+		$("#s1").html(  "" );
+	} )
+	//密码验证
+	var flagPwd = null;
+	$("#upwd").blur(  function(){
+		if( flagName  ){
+			if( $(this).val()=="" ){
+				$("#s2").html(  "密码不能为空" ).css( {"color" : "#f00" ,"display" :"block"} );
+				return;
+			}
+			for( var i = 0 ;i< arr.length ;i++  ){
+				if(  $(this).val() == arr[i].pwd ){
+					flagPwd = true;
+					$("#s2").html(  "正确" ).css( {"color" : "#eee" ,"display" :"block"} );
+					break;
+				}
+				else{
+					flagPwd =false;
+					
+				}
+			}
+			if( !flagPwd ){
+				$("#s2").html(  "密码错误" ).css( {"color" : "#f00" ,"display" :"block"} );
+			}
+		}
+		else{
+			$("#s2").html(  "请先填写用户名" ).css( {"color" : "#f00" ,"display" :"block"} );
+		}
+	} )
+	$("#upwd").focus( function(){
+		$("#s2").html(  "" );
+	} )
+
+	
+	$("#btn").click( function(){
+
+		if(  flagName && flagPwd  ){
+			//记住账号起作用的时候  下次登录就会记住账号
+			if( $("#rember").prop( "checked" )  ){
+				var remberArr =[];
+				var _json={
+					name : $("#uname").val(),
+					pwd : $("#upwd").val(),
+				}
+				remberArr.push( _json );
+				setCookie( "rember" , JSON.stringify( remberArr ) )
+		    }
+		    else{
+		    	removeCookie( "rember" );
+		    }
+		    //console.log( remberArr );
+			//location.href="souye.html";
+			// 村当前的cookie
+			for( var i = 0 ;i<arr.length ;i++ ){
+				if( $("#uname").val() == arr[i].name && $("#upwd").val() == arr[i].pwd ){
+					var _json={
+						name: arr[i].name,
+						pwd: arr[i].pwd,
+						sex: arr[i].sex,
+						birthday: arr[i].birthday,
+						location: arr[i].location,
+						dlsuccess: 1,
+					}
+					setCookie( "dluserimformation" , JSON.stringify( _json ));
+					var cookie3 = getCookie( "dluserimformation" );
+					console.log( cookie3 );
+
+					break;
+					
+				}
+			}
+			location.href="souye.html";
+			//alert();
+	}
+
+	} )
+	window.onload = function(){
+		var remberCookie = getCookie( "rember" );
+		console.log( remberCookie.length );
+		if( remberCookie.length!=0 ){
+			$("#uname").val(  remberCookie[0].name  );
+			$("#upwd").val( remberCookie[0].pwd ); 
+			$("#rember").prop( "checked" ,"true" )
+			flagPwd =true;
+			flagName = true;
+		}
+	}
+	
+	
+	
+
+
+
+</script>

@@ -1,0 +1,163 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>     
+<meta charset="UTF-8">
+<title>Document</title>   
+<style type="text/css"> 
+*{  margin: 0 ; padding:0 ; box-sizing: border-box  }   
+	.layerout{  margin:0 auto ;  }
+	a{ text-decoration:none ; color :#999;   }
+	a:hover{  color : red; }
+	ul li{  list-style: none; }
+ /*header start*/
+
+	/*main start*/
+	.main{ width : 1222px; height: 784px; background: url(image/zuce/login_03.jpg) no-repeat; position: relative; }
+	/*注册表单部分*/
+	.boxregister{  width:380px; height:485px; background: #fff; position: relative; top : 110px; left: 800px; display: flex ;justify-content: center ; align-items: center;   }
+	.container{ width: 312px; height: 445px; font-size: 12px;    }
+	.container p{ width: 312px; height: 40px; line-height: 40px;   }
+	#uname,#upwd,#qrma{  width: 312px; height: 44px; border: 1px #eee solid ;  }
+	.p4,.p5{  display: flex ;align-items: center; justify-content: flex-start;}
+    /*footer start*/
+
+	</style>
+<link rel="stylesheet" type="text/css" href="public/zucecss.css">
+</head>
+<body>
+<!--  	header  start -->	
+	<div id="topheader"></div>
+		<!-- <div class = "layerout" id ="header">
+			<p></p>
+			<span><a href = "#">寺库APP</a></span>
+			<span><a href = "#">收藏寺库</a></span>
+			<span><a href = "#">寺库首页</a></span>
+
+		</div> -->
+<!-- 	main start -->
+	<div class  = "main layerout">
+	<!-- 注册页面部分 -->
+		<div class="boxregister">
+			<div class ="container">
+			<p>用户名：<span id="s1" style ="float:right; color:#999">请输入手机号或者邮箱</span></p>
+			<input type="text" name="" id="uname">
+			<p>密码 <span id="s2" style='float:right;display:none;'></span></p>
+			<input type="password" name="" id="upwd">
+			<p>确认密码 <span id="s3" style='float:right;display:none'></span></p>
+			<input type="password" name="" id="qrma">
+			<p class="p4"><input type="checkbox" name="" id="">贵宾邀请码</p>
+			<input type="button" value="立即注册" id="btn" style = "color:#fff;background:#ff9900;width:312px;height:50px;border:none;">
+			<p class="p5"><input type="checkbox" name="" id="xy">我一阅读并同意寺库网用户注册协议
+			</p>
+			<p> 已经是寺库会员？ <a href="denglu.html" style="color:#ff9900"> 立即登录 </a></p>
+			</div>
+		</div>
+	</div>
+	
+<!-- 	footer start -->
+<div class ="footercontainer"></div>
+
+</div> 
+</body>
+</html>
+<script src = "cookie.js"></script>
+<script src=jquery-1.11.1.min.js></script>
+<script type="text/javascript">
+	$(".footercontainer").load( "public/zucepb.html .footer" );
+	$("#topheader").load( "public/zucepb.html #header"  )
+	var flagName = null;
+	$("#uname").blur( function(){
+		var reg = /^(\d{11})|(\w+@\w+\.(com)|(com\.cn))$/;
+		var str = $(this).val();
+		if( reg.test(str ) ){
+			flagName=true;
+			$("#s1").css( {"display" : "block","color" :"#999"} );
+			$("#s1").html( "用户名格式输入正确" );
+		}
+		else{
+			flagName = false;
+			$("#s1").css( {"color" : "red"} );
+			$("#s1").html(  "请输入手机号或者邮箱" );
+		}
+
+	} )
+	var flagPwd = null;
+	$("#upwd").blur( function(){
+	var reg = /^\w{6,}$/;
+	var str = $(this).val();
+	if( reg.test(str ) ){
+		flagPwd=true;
+		$("#s2").css( {"display" : "block","color" : "#999"} );
+		$("#s2").html( "密码输入正确" );
+	}
+	else{
+		flagPwd = false;
+		$("#s2").css( {"color" : "red",} );
+		$("#s2").html(  "密码是六位以上的字符" );
+	}
+
+} )
+	var flagQr = null;
+	$("#qrma").blur( function(){
+
+	var str = $(this).val();
+	if( str == $("#upwd").val()  ){
+		flagQr=true;
+		$("#s3").css( {"display" : "block" , "color" : "#999"} );
+		$("#s3").html( "两次输入一致" );
+	}
+	else{
+		flagQr = false;
+		console.log(1);
+		$("#s3").css( {"color" : "red"} );
+		$("#s3").html(  "两次密码必须一致" );
+	}
+
+} )
+	// 提交时必须使用cookie
+	$("#btn").click(  function(){
+		var flagrepeat= true;
+		if( flagName && flagPwd && flagQr  ){
+			//console.log( 4444 );
+			var arr =[];  // 存放总的
+			var newuserArr=[]; // 存放当前单个人的
+			var _json={
+				name : $("#uname").val(),
+				pwd : $("#upwd").val(),
+				sex :null,
+				birthday:null,
+				location :null,
+				dlsuccess : null,
+			}
+			var cookieInfo = getCookie(  "imformation" );
+			if( cookieInfo.length!=0 ){
+				arr = cookieInfo;
+				for( var i = 0; i< arr.length ;i++ ){
+					if( _json.name == arr[i].name  ){
+						$("#s1").html( "用户民重复了" ).css( {"color" : "#f00"});
+						flagrepeat = false;
+						return;
+					}
+				}
+				if( flagrepeat ){
+				arr.push( _json  );
+				newuserArr.push( _json );  // 存放当前单个人的
+				setCookie( "userimformation" ,JSON.stringify( newuserArr )  );
+			    setCookie(  "imformation" ,JSON.stringify( arr  ) );
+			    location.href="zechechenggong.html";
+				}
+			}
+			else {
+				arr.push( _json );
+				newuserArr.push( _json );  // 存放当前单个人的
+				setCookie(  "imformation" ,JSON.stringify( arr  ) );
+				setCookie( "userimformation" ,JSON.stringify( newuserArr )  );
+				location.href="zechechenggong.html";
+			}
+			console.log( arr );	
+			console.log( newuserArr );
+		}
+	} )
+
+
+</script>

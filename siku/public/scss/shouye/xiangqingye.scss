@@ -1,0 +1,504 @@
+*{
+	margin:0;padding:0;
+	box-sizing:border-box;
+}
+ul li{ list-style: none }
+a{ text-decoration: none }
+a:hover{ color:#f00; }
+.layer{
+	 margin: 0 auto;
+	 width: 1195px;
+}
+img{
+	display: block;
+}
+@mixin fontpb( $color:#999) {
+	font-size: 12px;
+	color:$color;
+}
+@mixin flexC($row:center){
+	display:flex;
+	justify-content: $row;
+	align-items:center;
+}
+@mixin column( $items:center , $content:flex-start  ){
+	display:flex;
+	flex-direction:column;
+	align-items:$items;
+	justify-content: $content;
+}
+@mixin position( $width,$height,$left,$top ){
+	width : $width;
+	height: $height;
+	position: absolute;
+	left:$left;
+	top:$top;
+}
+.main{
+	background:#eee;
+	width: 100%;
+
+	.maintop{
+		width:1195px;
+		margin: 0 auto;
+		.maintoph{
+			width:1195px;
+			height:63px;
+			.top{
+				float: left;
+				li{
+					float: left;
+					height:100%;
+					line-height: 63px;
+					a{
+						@include fontpb( #000 );
+					}
+					a:hover{
+						color:#f00;
+					}
+				}
+			}
+		}
+		p{
+			float: right;
+			@include fontpb( #000 );
+			height:63px;
+			line-height: 63px;
+		}
+	}
+	.maintopm{
+		width:1195px;
+		height:554px;
+		background:#fff;
+		padding: 45px;
+		.maintopleft{
+			width:480px;
+			height:463px;
+			float:left;
+			.lefttop{
+				width:485px;
+				height:402px;
+				border:1px #eee solid;
+				.left{
+					width:82px;
+					height:400px;
+					border-right: 1px #eee solid;
+					float:left;
+					.suolue{
+						width:80px;
+						height:80px;
+						
+						position: relative;
+						margin-bottom: 5px;
+						img{
+							position: absolute;
+							width:80px;
+							height:80px;
+							z-index: 1;
+						}
+						.xukuang{
+							position: absolute;
+							width:80px;
+							height:80px;
+							z-index: 3;
+							background: url( "../../../image/xiangqingye/detail_icon6.png"  ) no-repeat ;
+						    background-position: -140px -237px;
+						    display: none;
+						}
+
+					}
+				}
+				.stage{
+					width:400px;
+					height:400px;
+					position: relative;
+					float: right;
+					//overflow: hidden;
+					
+					.smallbox{
+					background: url( "../../../image/xiangqingye/small1.jpg" ) no-repeat;
+					width:400px;
+					height:400px;
+					position: absolute;
+					background-size: 400px 400px;
+					.mask{
+						width:200px;
+						height:200px;
+						background: #f00;
+						opacity: 0.3;
+						position: absolute;
+						display: none;
+						cursor: move;
+					}
+					}
+					.bigbox{
+						width:375px;
+						height:375px;
+						position: absolute;
+						left:402px;
+						display: none;
+						background: url("../../../image/xiangqingye/big1.jpg") no-repeat left top;
+						z-index: 5;
+					}
+				}
+			}
+			.leftbottom{
+				width:480px;
+				height:60px;
+				ul{
+					width:480px;
+					@include flexC( space-around );
+					li{
+
+						height:60px;
+						line-height: 60px;
+						@include flexC( space-around );
+						padding: 0 10px;
+						span{
+							width:20px;
+							height:20px;
+							background: url("../../../image/detail_icon6.png") no-repeat ;
+						}
+						a{
+							@include fontpb(  );
+						}
+						a:hover{
+							color:#f00;
+						}
+					}
+					li:nth-of-type(1) span{
+						background-position: 0 -158px;
+					}
+					li:nth-of-type(2) span{
+						background-position: 0 -198px;
+					}
+					li:nth-of-type(3) span{
+						background-position: 0 -240px;
+					}
+					li:nth-of-type(4) span{
+						background-position: 0 0;
+					}
+					li:nth-of-type(5) span{
+						background-position: 0 -39px;
+					}
+				}
+
+			}
+		}
+		.maintopright{
+			width:600px;
+			height:463px;
+			float: right;
+
+			.top{
+				width:100%;
+				height:70px;
+				border-bottom: 1px #000 dashed;
+				padding:20px;
+				padding-right: 40px;
+				color:#000;
+				font-size: 16px;
+
+			}
+			.center{
+				width:100%;
+				height:153px;
+				border-bottom: 1px #000 dashed;
+				padding:10px;
+				.first{
+					color:#000;
+					font-size: 12px;
+					height: 35px;
+					margin-bottom: 10px;
+					span{
+						color:#f00;
+						font-size: 8px;
+					}
+					i{
+						color:#f00;
+						font-size: 30px;
+					}
+				}
+				.second{
+					color:#000;
+					font-size: 12px;
+					height: 20px;
+					margin-bottom: 10px;
+					span:nth-of-type(1){
+						color:#00f;
+					}
+					span:nth-of-type(2){
+						color:#f00;
+					}
+				}
+				.third{
+					color:#000;
+					font-size: 12px;
+					height: 33px;
+				}
+
+			}
+			.bottom{
+				width:100%;
+				height:180px;
+				@include column( flex-start , space-aroound );
+				padding-top: 30px;
+				.first{
+					height:45px;
+					@include flexC( flex-start);
+					span{
+						width:85px;
+						height: 45px;
+						line-height: 45px;
+						@include fontpb( #000 );
+					}
+					.xuan{
+						position: relative;
+						width:34px;
+						height:36px;
+						cursor: pointer;
+					
+						
+						img{
+							width:34px;
+							height:36px;
+							position: absolute;
+							z-index: 1;
+						}
+						.kuang{
+							width:34px;
+							height:36px;
+							position: absolute;
+							border: 2px #9966cc solid; 
+							
+							
+							z-index: 2;
+							display: none;
+						}
+						.gou{
+							width:14px;
+							height:14px;
+							position: absolute;
+							right:0;
+							bottom:0;
+							background: url("../../../image/xiangqingye/detail_icon6.png") no-repeat ;
+							background-position: -208px -21px;
+							z-index: 3;
+							display: none;
+
+						}
+					}
+				}
+				.second{
+					height:45px;
+					@include flexC( flex-start);
+					span{
+						width:85px;
+						height: 45px;
+						line-height: 45px;
+						@include fontpb( #000 );
+
+					}
+					ul{
+						width:290px;
+						height:45px;
+						@include flexC( space-between);
+						li{
+							height:35px;
+							@include flexC( );
+							position: relative;
+							border : 1px #eee solid;
+							font-size: 12px;
+							cursor: pointer;
+							// span{
+							// 	height:35px;
+							// 	font-size: 12px;
+							// 	height:35px;
+
+							// }
+							.gou{
+							width:14px;
+							height:14px;
+							position: absolute;
+							right:0;
+							bottom:0;
+							background: url("../../../image/xiangqingye/detail_icon6.png") no-repeat ;
+							background-position: -206px -19px;
+							z-index: 3;
+							display: none;
+
+						}
+
+						}
+					}
+					p{
+						@include flexC( );
+						margin-left: 20px;
+						span{
+							width:8px;
+							height:15px;
+							background: url("../../../image/xiangqingye/detail_icon6.png") no-repeat;
+							background-position: -166px -46px;
+							margin-right: 10px;
+							cursor: pointer;
+						}
+					}
+				}
+				.third{
+					height:45px;
+					@include flexC( flex-start);
+					font-size: 12px;
+					span{
+						width:85px;
+						height: 45px;
+						line-height: 45px;
+						@include fontpb( #000 );
+					}
+					.anniu{
+						width:80px;
+						height:23px;
+						@include flexC( flex-start);
+						border:1px #eee solid;
+						margin-right: 20px;
+						.left{
+							width:25%;
+							height:23px;
+							background:url("../../../image/xiangqingye/detail_icon6.png") no-repeat ;
+							background-position: -200px -70px;
+							cursor: pointer;
+						}
+						.left:hover{
+							background-position: -177px -70px;
+						}
+						.center{
+							width:50%;
+							height:23px;
+							text-align: center;
+							line-height: 20px;
+							font-size: 12px;
+							
+							border:none;
+							padding: 0;
+						}
+						.right{
+							width:25%;
+							height:100%;
+							background:url("../../../image/xiangqingye/detail_icon6.png") no-repeat ;
+							background-position: -200px -48px;
+							cursor: pointer;
+							
+						}
+						.right:hover{
+							background-position: -177px -48px;
+						}
+
+					}
+					b{
+						color:#f00;
+					}
+
+				}
+
+
+
+			}
+			.footer{
+					width:421px;
+					height:47px;
+					@include flexC( flex-start );
+					.buy{
+						width:160px;
+						height:47px;
+						background: url("../../../image/detail_icon6.png") no-repeat;
+						background-position: -61px -550px;
+						margin-right: 30px;
+					}
+					.buy:hover{
+						background-position: -61px -458px;
+					}
+					.gouwuche{
+						width:160px;
+						height:47px;
+						background: url("../../../image/detail_icon6.png") no-repeat;
+						background-position: -61px -596px;
+					}
+					.gouwuche:hover{
+						background-position: -61px -504px;
+					}
+				}
+
+		}
+	}
+	.mainbottom{
+		width:1201px;
+		height:1409px;
+		margin : 0 auto;
+		background: url("../../../image/xiangqingye/mainbottom-03.jpg") no-repeat;
+	}
+}
+//购物车
+#shopcar{
+	width:40px;
+	height:200px;
+	position: fixed;
+	right:20px;
+	top:250px;
+	background:#000;
+	li:nth-of-type(1){
+		height:70px;
+		@include flexC();
+		border-bottom: 1px #fff solid;
+		cursor: pointer;
+		span{
+			width:16px;
+			height:16px;
+			background: url("../../../image/xiangqingye/nBar_icon.png") ;
+			background-position: 0 0;
+		
+
+		}
+	}
+	li:nth-of-type(2){
+		height:130px;
+		width:100%;
+		position: relative;
+
+		@include column( center ,center );
+		cursor: pointer;
+
+		span{
+			width:16px;
+			height:16px;
+			//background:#f00;
+			 background: url("../../../image/xiangqingye/nBar_icon.png");
+			 background-position:-22px -3px;
+		}
+		p{
+			width: 16px;
+			height:70px;
+			color: #fff;
+		}
+		b{
+			width:20px;
+			height:20px;
+			border-radius: 50%;
+			position: absolute;
+			left:0px;
+			top:10px;
+			background: #f00;
+			color:#fff;
+			text-align: center;
+			line-height: 20px;
+		}
+	}
+}
+.createDiv{
+	width:300px;
+	height:300px;
+	//background: #f00;
+	position: absolute;
+	z-index: 50;
+	top:240px;
+	left:200px;
+	//background-size: contain;
+}
